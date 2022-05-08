@@ -1,4 +1,3 @@
-const { sass } = require('laravel-mix');
 const mix = require('laravel-mix');
 
 /*
@@ -12,13 +11,8 @@ const mix = require('laravel-mix');
  |
  */
 
-let productionSourceMaps = false;
-
-mix.js('resources/js/app.js', 'public/js')
-    .vue()
-    .extract(['vue'])
-    .sass('resources/sass/app.scss', 'public/css')
-    .postCss('resources/css/app.css', 'public/css', [
-        require('tailwindcss')
-    ])
-    .sourceMaps(productionSourceMaps, 'source-map');
+mix.js('resources/js/app.js', 'public/js').postCss('resources/css/app.css', 'public/css', [
+    require('postcss-import'),
+    require('tailwindcss'),
+    require('autoprefixer'),
+]);
