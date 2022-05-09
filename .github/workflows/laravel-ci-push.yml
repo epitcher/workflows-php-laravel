@@ -1,11 +1,21 @@
-name: Laravel CI - Push
+name: Laravel CI - Commit
 
 on:
   push:
     branches:
       - master 
       - staging
-      - workflow_dispatch
+
+  push_request:
+    branches:
+      - master 
+      - staging      
+
+  workflow_dispatch:
+    branches:
+      - master 
+      - staging
+    
 
 jobs:
   laravel-tests:
