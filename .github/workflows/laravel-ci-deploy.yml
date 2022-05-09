@@ -1,13 +1,12 @@
-name: Laravel CI - Pull Request
+name: Laravel CI/CD
 
 on:
   pull_request:
     branches:
       - master 
-      - staging
 
 jobs:
-  laravel-tests:
+  laravel-deploy:
 
     runs-on: ubuntu-latest
 
