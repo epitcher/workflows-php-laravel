@@ -48,10 +48,6 @@ jobs:
         with:
           files: 'composer.json'
 
-      - name: "Clear composer cache"
-        run: |
-          composer dump-autoload
-
       - name: Get Composer Cache Directory
         id: composer-cache
         if: steps.check_files.outputs.files_exists == 'true'
