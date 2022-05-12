@@ -50,7 +50,6 @@ jobs:
 
       - name: "Clear composer cache"
         run: |
-          php artisan config:cache
           composer dump-autoload
 
       - name: Get Composer Cache Directory
